@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:klinik_app/model/Poli.dart';
 import 'package:klinik_app/ui/poli/poli_detail.dart';
+import 'package:klinik_app/ui/poli/poli_form.dart';
 import 'poli_item.dart';
 
 class PoliPageWidget extends StatefulWidget {
@@ -29,6 +30,14 @@ class _PoliPageWidgetState extends State<PoliPageWidget> {
             poli: Poli(namaPoli: "Poli Gigi", kategoriPoli: "Poli"),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (contex) => const PoliForm()));
+        },
+        backgroundColor: Colors.red,
+        child: const Icon(Icons.add),
       ),
     );
   }

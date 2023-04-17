@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:klinik_app/ui/pasien/pasien_page.dart';
 import 'package:klinik_app/ui/pegawai/pegawai_page.dart';
+import 'package:klinik_app/ui/poli/poli_form.dart';
+import 'package:klinik_app/ui/poli/poli_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +17,9 @@ class MyApp extends StatelessWidget {
       title: 'Klinik App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
-      home: const PegawaiPage(),
+      home: const PoliPageWidget(),
     );
   }
 }
