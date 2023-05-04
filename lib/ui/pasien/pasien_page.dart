@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:klinik_app/model/Pasien.dart';
+import 'package:klinik_app/ui/pasien/pasien_form.dart';
 import 'package:klinik_app/ui/pasien/pasien_item.dart';
 
 class PasienPageWidget extends StatefulWidget {
@@ -43,6 +44,13 @@ class _PasienPageWidgetState extends State<PasienPageWidget> {
                   noTelp: "0856238972",
                   alamat: "Jl. Slipi")),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const PasienForm()));
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }

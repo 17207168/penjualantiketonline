@@ -22,10 +22,6 @@ class _PasienDetailWidgetState extends State<PasienDetailWidget> {
           const SizedBox(
             height: 20,
           ),
-          Text(
-            "Id Pasien : ${widget.pasien.id}",
-            style: const TextStyle(fontSize: 20),
-          ),
           const SizedBox(
             height: 20,
           ),
