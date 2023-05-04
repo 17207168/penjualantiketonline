@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:klinik_app/ui/pasien/pasien_page.dart';
 import 'package:klinik_app/ui/pegawai/pegawai_page.dart';
-import 'package:klinik_app/ui/poli/poli_form.dart';
 import 'package:klinik_app/ui/poli/poli_page.dart';
 
 void main() {

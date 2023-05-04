@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../model/pegawai.dart';
 import 'pegawai_item.dart';
+import 'pegawai_form.dart';
 
 class PegawaiPage extends StatefulWidget {
   const PegawaiPage({super.key});
@@ -37,6 +38,14 @@ class _PegawaiPageState extends State<PegawaiPage> {
                 password: "dimas2met"),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (contex) => const PegawaiForm()));
+        },
+        backgroundColor: Colors.red,
+        child: const Icon(Icons.add),
       ),
     );
   }
