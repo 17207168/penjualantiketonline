@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:klinik_app/ui/pasien/pasien_page.dart';
+import 'package:klinik_app/ui/pasien/pasien_update.dart';
 import '../../model/Pasien.dart';
 
 class PasienDetailWidget extends StatefulWidget {
@@ -55,20 +57,29 @@ class _PasienDetailWidgetState extends State<PasienDetailWidget> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                  onPressed: () {},
-                  style:
-                      ElevatedButton.styleFrom(backgroundColor: Colors.green),
-                  child: const Text("Ubah")),
-              ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  child: const Text("Hapus"))
-            ],
+            children: [_tombolUbah(), _tombolHapus()],
           )
         ],
       ),
     );
+  }
+
+  _tombolUbah() {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => PasienUpdate(pasien: widget.pasien)));
+        },
+        style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+        child: Text("Ubah"));
+  }
+
+  _tombolHapus() {
+    return ElevatedButton(
+        onPressed: () {},
+        style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+        child: Text("Hapus"));
   }
 }

@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const PasienPageWidget(),
+      home: const PegawaiPage(),
     );
   }
 }

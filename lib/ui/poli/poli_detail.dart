@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:klinik_app/ui/poli/poli_page.dart';
+import 'package:klinik_app/ui/poli/poli_update.dart';
 import '../../model/Poli.dart';
 
 class PoliDetailWidget extends StatefulWidget {
@@ -38,20 +40,29 @@ class _PoliDetailWidgetState extends State<PoliDetailWidget> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                  onPressed: () {},
-                  style:
-                      ElevatedButton.styleFrom(backgroundColor: Colors.green),
-                  child: Text("Ubah")),
-              ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  child: Text("Hapus"))
-            ],
+            children: [_tombolUbah(), _tombolHapus()],
           )
         ],
       ),
     );
+  }
+
+  _tombolUbah() {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => PoliUpdate(poli: widget.poli)));
+        },
+        style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+        child: Text("Ubah"));
+  }
+
+  _tombolHapus() {
+    return ElevatedButton(
+        onPressed: () {},
+        style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+        child: Text("Hapus"));
   }
 }
