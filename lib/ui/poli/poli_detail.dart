@@ -61,7 +61,32 @@ class _PoliDetailWidgetState extends State<PoliDetailWidget> {
 
   _tombolHapus() {
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          AlertDialog alertDialog = AlertDialog(
+            content: Text("Yakin ingin menghapus data ini?"),
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PoliPageWidget()));
+                },
+                child: Text("Ya"),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("Tidak"),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.grey),
+              )
+            ],
+          );
+          showDialog(context: context, builder: (context) => alertDialog);
+        },
         style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
         child: Text("Hapus"));
   }
