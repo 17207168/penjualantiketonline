@@ -44,7 +44,6 @@ class _PegawaiPageState extends State<PegawaiPage> {
           Navigator.push(context,
               MaterialPageRoute(builder: (contex) => const PegawaiForm()));
         },
-        backgroundColor: Colors.red,
         child: const Icon(Icons.add),
       ),
     );

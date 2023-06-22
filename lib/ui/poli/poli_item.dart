@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../model/Poli.dart';
+import '../../model/poli.dart';
 import 'poli_detail.dart';
 
 class PoliItem extends StatelessWidget {
@@ -14,7 +14,6 @@ class PoliItem extends StatelessWidget {
         child: ListTile(
           title: Text(
             poli.namaPoli,
-            style: const TextStyle(color: Colors.red),
           ),
         ),
       ),

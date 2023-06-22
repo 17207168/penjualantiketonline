@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:klinik_app/ui/poli/poli_page.dart';
 import 'package:klinik_app/ui/poli/poli_update.dart';
-import '../../model/Poli.dart';
+import '../../model/poli.dart';
 
 class PoliDetailWidget extends StatefulWidget {
   final Poli poli;
@@ -26,13 +26,6 @@ class _PoliDetailWidgetState extends State<PoliDetailWidget> {
           ),
           Text(
             "Nama Poli : ${widget.poli.namaPoli}",
-            style: TextStyle(fontSize: 20),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            "Kategori Poli : ${widget.poli.kategoriPoli}",
             style: TextStyle(fontSize: 20),
           ),
           SizedBox(

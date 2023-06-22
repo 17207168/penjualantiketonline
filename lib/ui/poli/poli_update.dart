@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:klinik_app/model/Poli.dart';
+import 'package:klinik_app/model/poli.dart';
 import 'package:klinik_app/ui/poli/poli_detail.dart';
 
 class PoliUpdate extends StatefulWidget {
@@ -51,7 +51,7 @@ class _PoliUpdateState extends State<PoliUpdate> {
   _tombolSimpan() {
     return ElevatedButton(
         onPressed: () {
-          Poli poli = Poli(namaPoli: _namaPoliCtrl.text, kategoriPoli: "Poli");
+          Poli poli = Poli(namaPoli: _namaPoliCtrl.text);
           Navigator.pushReplacement(
               context,
               MaterialPageRoute(

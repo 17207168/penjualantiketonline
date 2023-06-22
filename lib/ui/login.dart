@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:klinik_app/service/login_service.dart';
+import 'package:klinik_app/ui/beranda.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,6 +12,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   Icon icon = Icon(Icons.visibility);
   bool obscure = true;
+
+  final usernamectrl = TextEditingController();
+  final passwordctrl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                           TextFormField(
                             decoration:
                                 const InputDecoration(labelText: "Username"),
+                            controller: usernamectrl,
                           ),
                           const SizedBox(
                             height: 20,
@@ -67,6 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                                   },
                                   icon: icon),
                             ),
+                            controller: passwordctrl,
                           ),
                           const SizedBox(
                             height: 40,
@@ -74,7 +81,38 @@ class _LoginPageState extends State<LoginPage> {
                           Container(
                             width: MediaQuery.of(context).size.width,
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () async {
+                                String username = usernamectrl.text;
+                                String password = passwordctrl.text;
+                                await LoginService()
+                                    .login(username, password)
+                                    .then((value) {
+                                  if (value == true) {
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Beranda()));
+                                  } else {
+                                    AlertDialog alertDialog = AlertDialog(
+                                      content: const Text(
+                                          "Username atau Password Tidak Valid"),
+                                      actions: [
+                                        ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text("OK"),
+                                          style: ElevatedButton.styleFrom(
+                                              primary: Colors.green),
+                                        )
+                                      ],
+                                    );
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) => alertDialog);
+                                  }
+                                });
+                              },
                               child: const Text("Login"),
                             ),
                           ),

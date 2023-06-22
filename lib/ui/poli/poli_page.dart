@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:klinik_app/model/Poli.dart';
+import 'package:klinik_app/model/poli.dart';
 import 'package:klinik_app/ui/poli/poli_detail.dart';
 import 'package:klinik_app/ui/poli/poli_form.dart';
 import 'poli_item.dart';
@@ -21,13 +21,13 @@ class _PoliPageWidgetState extends State<PoliPageWidget> {
       body: ListView(
         children: [
           PoliItem(
-            poli: Poli(namaPoli: "Poli Anak", kategoriPoli: "POLI"),
+            poli: Poli(namaPoli: "Poli Anak"),
           ),
           PoliItem(
-            poli: Poli(namaPoli: "Poli Kandungan", kategoriPoli: "POLI"),
+            poli: Poli(namaPoli: "Poli Kandungan"),
           ),
           PoliItem(
-            poli: Poli(namaPoli: "Poli Gigi", kategoriPoli: "Poli"),
+            poli: Poli(namaPoli: "Poli Gigi"),
           ),
         ],
       ),
