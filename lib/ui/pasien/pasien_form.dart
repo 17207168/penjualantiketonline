@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:klinik_app/model/Pasien.dart';
 import 'package:klinik_app/ui/pasien/pasien_detail.dart';
-import 'package:klinik_app/ui/poli/poli_detail.dart';
+import 'package:klinik_app/ui/penjualan/data_penumpang.dart';
 
 class PasienForm extends StatefulWidget {
   const PasienForm({super.key});

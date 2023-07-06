@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:klinik_app/helpers/user_info.dart';
-import 'package:klinik_app/model/pegawai.dart';
 import 'package:klinik_app/ui/beranda.dart';
 import 'package:klinik_app/ui/login.dart';
-import 'package:klinik_app/ui/pasien/pasien_page.dart';
-import 'package:klinik_app/ui/pegawai/pegawai_page.dart';
-import 'package:klinik_app/ui/poli/poli_page.dart';
+import 'package:klinik_app/ui/penjualan/data_tiket.dart';
+import 'package:klinik_app/ui/penjualan/pesan_tiket.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({super.key});
@@ -26,27 +24,35 @@ class Sidebar extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.accessible),
-            title: const Text("Poli"),
+            leading: const Icon(Icons.airplanemode_active),
+            title: const Text("Pesawat"),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => PoliPageWidget()));
+                  MaterialPageRoute(builder: (context) => PesanTiket()));
             },
           ),
           ListTile(
-            leading: Icon(Icons.people),
-            title: Text("Pegawai"),
+            leading: Icon(Icons.directions_railway),
+            title: Text("Kereta"),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => PegawaiPage()));
+                  MaterialPageRoute(builder: (context) => PesanTiket()));
             },
           ),
           ListTile(
-            leading: Icon(Icons.account_box_sharp),
-            title: Text("Pasien"),
+            leading: Icon(Icons.directions_bus),
+            title: Text("Bus"),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => PasienPageWidget()));
+                  MaterialPageRoute(builder: (context) => PesanTiket()));
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.book),
+            title: Text("History Pesanan"),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DataTiket()));
             },
           ),
           ListTile(
